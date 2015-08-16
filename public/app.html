@@ -1,4 +1,32 @@
 <template>
-	<div>${message}</div>
-	<button click.trigger="changeMessage()">Change Message</button>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">
+					Movies!
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<table class="table">
+			<thead>
+			<tr>
+				<th>Title</th>
+				<th>Year</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr repeat.for="movie of movies">
+				<td>${movie.title}</td>
+				<td>${movie.releaseYear}</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<compose view-model="currentDate"></compose>
+
 </template>

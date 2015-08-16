@@ -3,7 +3,8 @@ System.config({
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
-      "runtime"
+      "runtime",
+      "es7.decorators"
     ]
   },
   "paths": {
@@ -17,8 +18,10 @@ System.config({
   "map": {
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.16.0",
     "aurelia-framework": "github:aurelia/framework@0.15.0",
+    "aurelia-http-client": "github:aurelia/http-client@0.10.3",
     "babel": "npm:babel-core@5.8.22",
     "babel-runtime": "npm:babel-runtime@5.8.20",
+    "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@0.9.18",
     "github:aurelia/binding@0.8.6": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.9.2",
@@ -61,6 +64,10 @@ System.config({
     },
     "github:aurelia/history-browser@0.7.0": {
       "aurelia-history": "github:aurelia/history@0.6.1",
+      "core-js": "npm:core-js@0.9.18"
+    },
+    "github:aurelia/http-client@0.10.3": {
+      "aurelia-path": "github:aurelia/path@0.8.1",
       "core-js": "npm:core-js@0.9.18"
     },
     "github:aurelia/loader-default@0.9.5": {
@@ -125,6 +132,9 @@ System.config({
     },
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
+    },
+    "github:twbs/bootstrap@3.3.5": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:babel-runtime@5.8.20": {
       "process": "github:jspm/nodelibs-process@0.1.1"

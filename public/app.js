@@ -1,14 +1,22 @@
+import {inject} from "aurelia-framework";
+import {MovieData} from "./movieData";
+
+@inject(MovieData)
 export class All {
 	
-	constructor(){
-		this.message = "";
+	constructor(movieData){
+		this.movieData = movieData;
 	}
-	
+
+	/*
+	static inject(){
+		return [HttpClient];
+	}
+	*/
+
 	activate(){
-		this.message = "Hello from Aurelia!";
-	}
-	
-	changeMessage(){
-		this.message = "Goodbye!"
+		return this.movieData
+			.getAll()
+			.then(movies => this.movies = movies);
 	}
 }
