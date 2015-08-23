@@ -1,22 +1,14 @@
-import {inject} from "aurelia-framework";
-import {MovieData} from "./movieData";
 
-@inject(MovieData)
-export class All {
+export class App {
 	
-	constructor(movieData){
-		this.movieData = movieData;
+	configureRouter(config, router){
+		this.router = router;
+
+		config.map([
+			{ name:"home", route:["", "list"], moduleId:"movies/list", title:"List", nav:true },
+			{ route:"about", moduleId:"about/about", title:"About", nav:true},
+			{ name:"details", route:"details/:id", moduleId:"movies/details"}
+		])
 	}
 
-	/*
-	static inject(){
-		return [HttpClient];
-	}
-	*/
-
-	activate(){
-		return this.movieData
-			.getAll()
-			.then(movies => this.movies = movies);
-	}
 }
