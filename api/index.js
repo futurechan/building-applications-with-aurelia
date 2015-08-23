@@ -11,4 +11,9 @@ router.get('/movies/:id', function(req,res, next){
     res.send(_.findWhere(movies, {id:parseInt(req.params.id)}));
 })
 
+router.put('/movies', function(req,res, next){
+    res.send(req.body);
+})
+
+
 module.exports = router;

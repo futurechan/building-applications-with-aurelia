@@ -23,4 +23,21 @@ export class MovieData {
                 return response.content;
             });
     }
+
+    save(movie){
+        //return this.http.put(baseUrl, movie);
+
+        var request = this.http.createRequest();
+        request
+            .asPut()
+            .withUrl(baseUrl)
+            .withHeader('Accept', 'application/json')
+            .withHeader('Content-Type', 'application/json')
+            .withContent(movie)
+
+        return request.send()
+            .then(response => {
+                return response.content;
+            });
+    }
 }
